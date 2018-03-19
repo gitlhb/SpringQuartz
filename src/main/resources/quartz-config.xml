@@ -10,7 +10,7 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd
                ">
-    <!-- Spring整合Quartz的Spring配置 -->
+    <!-- Spring整合Quartz的Spring配置  自动化配置 -->
     <!--
      其中：test为Spring的组件对应的Bean
     -->
