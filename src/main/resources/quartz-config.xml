@@ -23,7 +23,6 @@
 		<property name="concurrent" value="false"></property>
 	</bean>
 
-
 	<bean id="cronTrigger"
                  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
     <property name="jobDetail" ref="jobDetail" />
@@ -39,6 +38,4 @@
 
 	<!-- 	<property name="configLocation" value="classpath:quartz.properties" /> -->
 	</bean>
-
-
 </beans>
