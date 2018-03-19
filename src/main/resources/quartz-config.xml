@@ -10,12 +10,16 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd
                ">
-    <!-- Spring整合Quartz Scheduled -->
-	<bean class="com.man.beans.Test" id="testQuartz"></bean>
-
+    <!-- Spring整合Quartz的Spring配置 -->
+    <!--
+     其中：test为Spring的组件对应的Bean
+    -->
 	<bean class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean" id="jobDetail">
-		<property name="targetObject" ref="testQuartz"></property>
-		<property name="targetMethod" value="test"></property>
+		<!--要执行调试任务的Bean-->
+        <property name="targetObject" ref="test"></property>
+        <!--目标方法-->
+		<property name="targetMethod" value="testQuartz"></property>
+        <!-- 上一次未执行完成的，要等待有再执行。 -->
 		<property name="concurrent" value="false"></property>
 	</bean>
 
@@ -27,7 +31,6 @@
 	</bean>
 
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
-
 		<property name="triggers">
 			<list>
 				<ref bean="cronTrigger" />
